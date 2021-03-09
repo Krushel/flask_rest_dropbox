@@ -1,6 +1,5 @@
 from flask import Blueprint, request, jsonify
 from drop import *
-from sqlite3 import Binary
 
 front = Blueprint('front', __name__)
 
