@@ -1,7 +1,7 @@
 import dropbox
 
 
-dbx = dropbox.Dropbox('nsRYGtrBcn0AAAAAAAAAAYUluU8qJX3ntIkardL8W5mGRLpCao3JPRB3yvjet6kF')
+dbx = dropbox.Dropbox('')
 
 
 # def create(key, value):
