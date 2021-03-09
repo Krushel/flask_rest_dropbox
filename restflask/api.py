@@ -63,11 +63,17 @@ def update(key):
 
 @app.route('/delete/<string:key>', methods=['GET', 'DELETE'])
 def delete(key):
-    try:
-        delete_file_from_path(key)
-        return jsonify({"success": True}), 200
-    except Exception as e:
-        return f'An error occured: {e}'
+    if key:
+        if dropbox_path_exists(key):
+            try:
+                delete_path(key)
+                return jsonify({"success": True}), 200
+            except Exception as e:
+                return f'An error occured: {e}'
+        else:
+            return 'No such key'
+    else:
+        return 'No key'
 
 if __name__ == '__main__':
     app.run(threaded=True, debug=True)
