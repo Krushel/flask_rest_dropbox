@@ -34,6 +34,8 @@ def get(key):
         try:
             if dropbox_path_exists(key):
                 return read_file(key)
+            else:
+                return 'No such key'
         except Exception as e:
             return f'An error occured: {e}'
     else:
